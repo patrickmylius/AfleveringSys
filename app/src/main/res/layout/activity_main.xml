@@ -39,6 +39,7 @@
     <Button
         android:layout_width="138dp"
         android:layout_height="58dp"
+        android:id="@+id/buttonClick"
 
         android:layout_gravity="center"
         android:layout_marginTop="200dp"
