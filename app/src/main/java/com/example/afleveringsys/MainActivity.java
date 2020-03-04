@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textview.setText("Hello, button works very well");
+                textview.setText("Hi, " + edittext.getText());
             }
         });
     }
