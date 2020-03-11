@@ -8,6 +8,9 @@ public class Model extends Observable{
 
     public void setData(String data) {
         this.data = data;
+
+        super.setChanged();
+        super.notifyObservers();
     }
 
     public String getData() {
