@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:id="@+id/InputText"
+        android:id="@+id/inputText"
 
         android:text="Type here.."
         android:textSize="30dp"
@@ -57,6 +57,7 @@
 
         android:background="@android:color/darker_gray"
         android:text="UPDATE"
+        android:onClick="enterInput"
         android:textColor="@android:color/black"
         android:textSize="30dp">
 

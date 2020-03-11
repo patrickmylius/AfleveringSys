@@ -17,10 +17,6 @@ import org.w3c.dom.Text;
 
 public class AndroidView extends AppCompatActivity {
 
-    TextView textview;
-    Button button;
-    EditText edittext;
-
     private Model model = new Model();
 
     @Override
@@ -28,22 +24,22 @@ public class AndroidView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textview=(TextView) findViewById(R.id.outputView);
-        textview.setText(model.getData());
+        TextView outputView = (TextView) findViewById(R.id.outputView);
+        outputView.setText(model.getData());
 
-        button=(Button) findViewById(R.id.enterButton);
-
-        edittext=(EditText) findViewById(R.id.InputText);
-        edittext.setText(model.getData());
+        EditText inputText = (EditText) findViewById(R.id.inputText);
+        inputText.setText(model.getData());
 
         }
 
         public void enterInput(View view) {
-            EditText inputText = (EditText) findViewById(R.id.InputText);
+            EditText inputText = (EditText) findViewById(R.id.inputText);
             TextView outputView = (TextView) findViewById(R.id.outputView);
 
             String input = inputText.getText().toString();
-            outputView.setText(input);
+            model.setData(input);
+            outputView.setText(model.getData());
+
         }
     }
 
