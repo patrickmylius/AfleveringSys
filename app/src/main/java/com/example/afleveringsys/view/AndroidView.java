@@ -47,5 +47,3 @@ public class AndroidView extends AppCompatActivity {
         }
     }
 
-
-}
