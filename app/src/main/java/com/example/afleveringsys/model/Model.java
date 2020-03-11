@@ -1,6 +1,8 @@
 package com.example.afleveringsys.model;
 
-public class Model {
+import java.util.Observable;
+
+public class Model extends Observable{
 
     private String data;
 
