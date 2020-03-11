@@ -4,7 +4,7 @@ import java.util.Observable;
 
 public class Model extends Observable{
 
-    private String data = "Hello";
+    private String data;
 
 
     public String getData() {

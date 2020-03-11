@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import java.util.Observable;
+import java.util.Observer;
 
 import com.example.afleveringsys.R;
 import com.example.afleveringsys.model.Model;
@@ -24,11 +26,28 @@ public class AndroidView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        observeModel(model);
+
         TextView outputView = (TextView) findViewById(R.id.outputView);
         outputView.setText(model.getData());
 
         EditText inputText = (EditText) findViewById(R.id.inputText);
         inputText.setText(model.getData());
+
+        }
+
+        private void observeModel(Model model) {
+        model.addObserver(new Observer() {
+            @Override
+            public void update(Observable o, Object arg) {
+                if (o instanceof Model) {
+                    String data = ((Model) o).getData();
+                    TextView outputView = (TextView) findViewById(R.id.outputView);
+                    outputView.setText(data);
+                }
+            }
+
+        });
 
         }
 
@@ -41,5 +60,6 @@ public class AndroidView extends AppCompatActivity {
             outputView.setText(model.getData());
 
         }
+
     }
 
