@@ -53,11 +53,11 @@ public class AndroidView extends AppCompatActivity {
 
         public void enterInput(View view) {
             EditText inputText = (EditText) findViewById(R.id.inputText);
-            //TextView outputView = (TextView) findViewById(R.id.outputView); Unødvendig når linje 60 bliver slettet.
+            TextView outputView = (TextView) findViewById(R.id.outputView); // Unødvendig når linje 60 bliver slettet.
 
             String input = inputText.getText().toString();
             model.setData(input);
-            //outputView.setText(model.getData()); Unødvendigt kald, fordi Observer-mønstret allerede har siukret opdatering af outputView
+            outputView.setText(model.getData()); // Unødvendigt kald fordi Observer-mønstret allerede har sikret opdatering af outputView.
 
         }
 
